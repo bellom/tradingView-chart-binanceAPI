@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-class TradeView extends React.Component {
-  componentDidMount(){
+  const TradeView = () => {
     axios.get('https://api.binance.com/api/v1/klines', {
     params: {
       symbol: 'BTCUSDT',
@@ -11,17 +10,17 @@ class TradeView extends React.Component {
     }
     }).then(res => {
       const data = res.data
-      const klines = data.map(i => ({
+      const trades = data.map(i => ({
         time:  i[0] / 1000,
         open:  i[1],
         high:  i[2],
         low:   i[3],
         close: i[4]
       }))
-      init(klines)
+      createChartWithAPIData(trades)
     })
-    const init = (data = []) => {
-      const chart = LightweightCharts.createChart(document.body, {
+    const createChartWithAPIData = (data = []) => {
+      const chart = window.LightweightCharts.createChart(document.body, {
         width: 700,
         height: 300,
         layout: {
@@ -56,14 +55,11 @@ class TradeView extends React.Component {
       });
       lineSeries.setData(data)
     }
-    }
-    render() {
-      return (
+    return (
       <div><h4>BNB-BTC CHART!</h4></div>
     );
   }
-};
-    
+
 export default TradeView;
 
 

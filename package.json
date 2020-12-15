@@ -22,7 +22,6 @@
     "eject": "react-scripts eject",
     "electron-start": "electron ."
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -40,15 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bellom/tradingView-chart-binanceAPI.git"
-  },
-  "author": "bellom",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bellom/tradingView-chart-binanceAPI/issues"
-  },
-  "homepage": "https://github.com/bellom/tradingView-chart-binanceAPI#readme"
+  }
 }
